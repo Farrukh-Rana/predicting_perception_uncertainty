@@ -1,0 +1,11 @@
+# perception_uncertainty_prediction
+
+This repository contains all the code, data and final report implemented during my guided research in WS19. The code is available in form of notebooks. A bit detail about the notebooks is given below:
+
+1. **Organic_XLNet_MultiLabel.ipynb**: This notebook contains the code for multi-label ABSA classification with binary cross-entropy loss and focal loss. The code for training and testing XLNet model is originally taken from [here](https://github.com/huggingface/transformers/blob/df9d6effae43e92761eb92540bc45fac846789ee/examples/run_glue.py) and then modified as required for my work.
+2. **Organic_XLNet_SingleLabel.ipynb**: This notebook contains the experiments after converting Organic annotated dataset from multi-label to single-label. Moreover, since the architecture for ABSA classification and perception uncertainty prediction model for regression is almost the same, The code is shared for the most part and it's present in the same notenook. The headings in the notebook clearly denote the code that is specifically for classification and regression. **If you have the training arguments file,** then simply load that file into *args* variable instead of directly hardcoding in the notebook. This could be useful in the scenario if you want to recreate a previously trained model.
+3. **Semantic_Similarity_Matrix_USE.ipynb**: This notebook contains the code for calculating class-wise semantic similarities and self-similarities. The original code for calculating semantic similarities was written by Mai Phuong, available [here](https://gitlab.lrz.de/social-rom/mai-transfer-learning-absa/blob/master/GUSE/Similarity-matrix.ipynb), and then modified for my requirements.
+4. **Calculate_Class_Centroids.ipynb**: This notebooks contains the code for calculating class centroid using COP-K-Means and then calculating perception uncertainty targets based on semantic similarity with class centroids.
+5. **PerceptionUncertaintyEvaluationSet.ipynb**: This notebook works on the evaluation dataset with multiple annotations per sample to calculate the "gold standard" ground truth perception uncertainty values.
+
+Complete details of the guided research can be read from the report. If you have any queries, you can email me at farrukh.mushtaq@tum.de
